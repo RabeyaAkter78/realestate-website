@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, X, Sun, Moon, User, LogOut, ChevronDown } from "lucide-react";
+import { Menu, Sun, Moon, User, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
@@ -29,56 +29,48 @@ const navItems = [
 
 export function MainNavbar() {
   const pathname = usePathname();
-  const { theme, resolvedTheme, toggleTheme } = useTheme();
+  const { resolvedTheme, toggleTheme } = useTheme();
   const { user, isAuthenticated, logout } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+    <header className="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex items-center justify-between bg-white/80 backdrop-blur-md rounded-full px-4 sm:px-6 py-2 shadow-lg border border-white/20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="relative w-10 h-10 flex items-center justify-center">
-              <svg
-                viewBox="0 0 40 40"
-                className="w-10 h-10"
+            <svg
+              viewBox="0 0 40 40"
+              className="w-8 h-8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 30 L10 25 L15 28 L20 22 L25 25 L30 20 L35 25 L35 35 L5 35 Z"
+                fill="#4CAF50"
+              />
+              <path
+                d="M12 25 L20 15 L28 25 L26 25 L26 35 L14 35 L14 25 Z"
+                fill="#E53935"
+              />
+              <path
+                d="M10 25 L20 13 L30 25"
+                stroke="#C62828"
+                strokeWidth="2"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {/* Map/land shape */}
-                <path
-                  d="M5 30 L10 25 L15 28 L20 22 L25 25 L30 20 L35 25 L35 35 L5 35 Z"
-                  fill="#4CAF50"
-                />
-                {/* House */}
-                <path
-                  d="M12 25 L20 15 L28 25 L26 25 L26 35 L14 35 L14 25 Z"
-                  fill="#E53935"
-                />
-                {/* Roof */}
-                <path
-                  d="M10 25 L20 13 L30 25"
-                  stroke="#C62828"
-                  strokeWidth="2"
-                  fill="none"
-                />
-                {/* Door */}
-                <rect x="17" y="28" width="6" height="7" fill="#5D4037" />
-                {/* Window */}
-                <rect x="15" y="22" width="4" height="4" fill="#FFF" />
-                <rect x="21" y="22" width="4" height="4" fill="#FFF" />
-                {/* Location pin */}
-                <circle cx="32" cy="12" r="5" fill="#1E88E5" />
-                <path
-                  d="M32 7 L32 12 L35 12"
-                  stroke="white"
-                  strokeWidth="2"
-                  fill="none"
-                />
-              </svg>
-            </div>
-            <span className="text-lg font-bold text-primary hidden sm:inline-block">
+              />
+              <rect x="17" y="28" width="6" height="7" fill="#5D4037" />
+              <rect x="15" y="22" width="4" height="4" fill="#FFF" />
+              <rect x="21" y="22" width="4" height="4" fill="#FFF" />
+              <circle cx="32" cy="12" r="5" fill="#1E88E5" />
+              <path
+                d="M32 7 L32 12 L35 12"
+                stroke="white"
+                strokeWidth="2"
+                fill="none"
+              />
+            </svg>
+            <span className="text-sm font-bold hidden sm:inline">
               <span className="text-[#1E88E5]">Insta</span>
               <span className="text-[#E53935]">Sign</span>
               <span className="text-[#1E88E5]">Tracker</span>
@@ -92,10 +84,10 @@ export function MainNavbar() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "px-3 py-2 text-sm font-medium rounded-md transition-colors",
+                  "px-4 py-2 text-sm font-medium rounded-full transition-colors",
                   pathname === item.href
-                    ? "bg-primary text-primary-foreground"
-                    : "text-muted-foreground hover:text-foreground hover:bg-accent"
+                    ? "bg-[#2196F3] text-white"
+                    : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
                 )}
               >
                 {item.label}
@@ -110,7 +102,7 @@ export function MainNavbar() {
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
-              className="hidden sm:flex"
+              className="hidden sm:flex rounded-full h-9 w-9"
             >
               {resolvedTheme === "dark" ? (
                 <Sun className="h-5 w-5" />
@@ -122,18 +114,18 @@ export function MainNavbar() {
             {isAuthenticated ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="relative h-8 w-8 rounded-full">
+                  <Button variant="ghost" className="relative h-8 w-8 rounded-full p-0">
                     <Avatar className="h-8 w-8">
-                      <AvatarFallback className="bg-primary text-primary-foreground">
+                      <AvatarFallback className="bg-[#2196F3] text-white text-sm">
                         {user?.name?.charAt(0).toUpperCase() || "U"}
                       </AvatarFallback>
                     </Avatar>
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-56">
+                <DropdownMenuContent align="end" className="w-56 rounded-xl">
                   <div className="flex items-center gap-2 p-2">
                     <Avatar className="h-8 w-8">
-                      <AvatarFallback className="bg-primary text-primary-foreground">
+                      <AvatarFallback className="bg-[#2196F3] text-white">
                         {user?.name?.charAt(0).toUpperCase() || "U"}
                       </AvatarFallback>
                     </Avatar>
@@ -162,11 +154,15 @@ export function MainNavbar() {
                   variant="outline"
                   size="sm"
                   asChild
-                  className="hidden sm:inline-flex"
+                  className="hidden sm:inline-flex rounded-full border-gray-300 text-gray-700 hover:bg-gray-100"
                 >
                   <Link href="/auth/login">Sign In</Link>
                 </Button>
-                <Button size="sm" asChild className="hidden sm:inline-flex">
+                <Button 
+                  size="sm" 
+                  asChild 
+                  className="hidden sm:inline-flex rounded-full bg-[#2196F3] hover:bg-[#1976D2] text-white"
+                >
                   <Link href="/auth/signup">Sign Up</Link>
                 </Button>
               </>
@@ -175,11 +171,11 @@ export function MainNavbar() {
             {/* Mobile Menu */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="md:hidden">
+                <Button variant="ghost" size="icon" className="md:hidden rounded-full h-9 w-9">
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-72">
+              <SheetContent side="right" className="w-72 rounded-l-2xl">
                 <div className="flex flex-col gap-4 mt-8">
                   <div className="flex items-center gap-2 px-2">
                     <svg
@@ -226,10 +222,10 @@ export function MainNavbar() {
                         href={item.href}
                         onClick={() => setIsOpen(false)}
                         className={cn(
-                          "px-3 py-2 text-sm font-medium rounded-md transition-colors",
+                          "px-3 py-2 text-sm font-medium rounded-lg transition-colors",
                           pathname === item.href
-                            ? "bg-primary text-primary-foreground"
-                            : "text-muted-foreground hover:text-foreground hover:bg-accent"
+                            ? "bg-[#2196F3] text-white"
+                            : "text-muted-foreground hover:text-foreground hover:bg-gray-100"
                         )}
                       >
                         {item.label}
@@ -241,7 +237,7 @@ export function MainNavbar() {
                       variant="ghost"
                       size="sm"
                       onClick={toggleTheme}
-                      className="justify-start"
+                      className="justify-start rounded-lg"
                     >
                       {resolvedTheme === "dark" ? (
                         <>
@@ -255,12 +251,12 @@ export function MainNavbar() {
                     </Button>
                     {!isAuthenticated && (
                       <>
-                        <Button variant="outline" size="sm" asChild>
+                        <Button variant="outline" size="sm" asChild className="rounded-lg">
                           <Link href="/auth/login" onClick={() => setIsOpen(false)}>
                             Sign In
                           </Link>
                         </Button>
-                        <Button size="sm" asChild>
+                        <Button size="sm" asChild className="rounded-lg bg-[#2196F3] hover:bg-[#1976D2]">
                           <Link href="/auth/signup" onClick={() => setIsOpen(false)}>
                             Sign Up
                           </Link>
