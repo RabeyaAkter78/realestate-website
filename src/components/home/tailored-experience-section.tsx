@@ -16,10 +16,10 @@ export function TailoredExperienceSection() {
           {/* Left Content */}
           <div className="space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              A Tailored Experience for Every Customer
+          A Tailored Experience for Every Customer
             </h2>
             <p className="text-gray-600">
-              InstaSignTracker gives you the flexibility to design an ordering experience that matches how your customers do business. From pricing to communication, everything can be tailored to fit each client relationship.
+         InstaSignTracker gives you the flexibility to design an ordering experience that matches how your customers do business. From pricing to communication, everything can be customized to fit each client relationship.
             </p>
             <ul className="space-y-3">
               {features.map((feature, index) => (
