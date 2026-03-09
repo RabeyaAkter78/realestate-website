@@ -2,7 +2,7 @@
 
 export function StatsSection() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-[#eff7fc]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4">
           <h2 className="text-2xl md:text-4xl font-bold text-gray-900">

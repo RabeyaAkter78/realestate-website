@@ -32,7 +32,7 @@ export function HeroSection() {
             <div className="pt-4">
               <Button
                 size="lg"
-                className="bg-[#2196F3] hover:bg-[#1976D2] text-white px-8 py-6 text-lg rounded-md"
+                className="bg-[var(--primary)] hover:bg-primary/20 text-white px-8 py-6 text-lg rounded-md"
                 asChild
               >
                 <Link href="/auth/signup" className="flex items-center gap-2">

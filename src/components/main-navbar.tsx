@@ -38,7 +38,7 @@ export function MainNavbar() {
   return (
     <header className="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="flex items-center justify-between bg-white/50 backdrop-blur-md rounded-xl px-4 sm:px-6 py-4 shadow-accent-foreground border border-white/60 font-opensans">
+        <div className="flex items-center justify-between bg-white/60 backdrop-blur-md rounded-xl px-4 sm:px-6 py-4 shadow-accent-foreground border border-white/60 font-opensans">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <Image src={logo} alt="Logo" width={160} height={40} />
@@ -139,7 +139,7 @@ export function MainNavbar() {
                 <Button
                   size="sm"
                   asChild
-                  className="hidden sm:inline-flex rounded text-lg font-medium  bg-[#2196F3] hover:bg-[#1976D2] text-white"
+                  className="hidden sm:inline-flex rounded text-lg  font-medium  bg-[#2196F3] hover:bg-[#1976D2] text-white"
                 >
                   <Link href="/auth/signup">Sign Up</Link>
                 </Button>
