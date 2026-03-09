@@ -7,6 +7,7 @@ import WhyChoose from "@/components/home/WhyChoose";
 import WeManage from "@/components/home/WeManage";
 import GetSTartedToday from "@/components/home/GetSTartedToday";
 import Testimonials from "@/components/home/Testimonials";
+import QuickCall from "@/components/home/QuickCall";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <Testimonials />
         <GetSTartedToday />
       </main>
+      <QuickCall />
       <MainFooter />
     </div>
   );

@@ -9,6 +9,7 @@ import {
   Heart,
   Calendar,
   Sparkle,
+  Send,
 } from "lucide-react";
 import Image from "next/image";
 import m1 from "@/assets/m1.png";
@@ -105,7 +106,7 @@ const GetSTartedToday = () => {
                     onChange={(e) =>
                       setFormData({ ...formData, fullName: e.target.value })
                     }
-                    className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all "
+                    className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all text-black"
                   />
                 </div>
               </div>
@@ -170,40 +171,17 @@ const GetSTartedToday = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-linear-to-r from-[#2563eb] to-[#3b82f6] hover:from-[#1d4ed8] hover:to-[#2563eb] text-white font-medium py-2.5 rounded-lg flex items-center justify-center gap-2 transition-all duration-200 shadow-md hover:shadow-lg"
+                className="w-full bg-linear-to-r from-[#0988dd] to-[#3b82f6] hover:from-[#3b82f6] hover:to-[#2563eb] text-white font-medium py-2.5 rounded-lg flex items-center justify-center gap-2 transition-all duration-200 shadow-md hover:shadow-lg"
               >
                 Send
-                <Heart className="w-4 h-4" />
+                <Send className="w-4 h-4" />
               </button>
             </form>
           </div>
         </div>
 
-        {/* Bottom Action Bar */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-white rounded-xl p-4 shadow-sm border border-gray-100">
-          {/* Logo */}
-          <div className="flex items-center gap-2">
-            <Image
-              src={logo}
-              alt="InstaSignTracker"
-              width={32}
-              height={32}
-              className="h-8 w-auto"
-            />
-          </div>
-
-          {/* Action Buttons */}
-          <div className="flex items-center gap-3">
-            <button className="inline-flex items-center gap-2 bg-[#1e3a5f] hover:bg-[#152a45] text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-colors">
-              <Phone className="w-4 h-4" />
-              Call Us Now
-            </button>
-            <button className="inline-flex items-center gap-2 bg-linear-to-r from-[#2563eb] to-[#3b82f6] hover:from-[#1d4ed8] hover:to-[#2563eb] text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-all shadow-md">
-              <Calendar className="w-4 h-4" />
-              Schedule Demo
-            </button>
-          </div>
-        </div>
+  
+    
       </div>
     </section>
   );
