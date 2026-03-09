@@ -58,7 +58,7 @@ export function TailoredExperienceSection() {
         {sections.map((section, index) => (
           <div
             key={index}
-            className={`flex flex-col lg:flex-row items-center gap-12  font-opensans md:mb-28  ${
+            className={`flex flex-col lg:flex-row items-center gap-12  font-opensans md:mb-28 hover:scale-105 transition-all duration-300  ${
               index % 2 === 0 ? "lg:flex-row-reverse justify-end" : ""
             }`}
           >
