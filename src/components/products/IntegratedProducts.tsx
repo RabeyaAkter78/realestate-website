@@ -1,84 +1,122 @@
 "use client";
 
-import img1 from "../../assets/tailored.png";
-import img2 from "../../assets/order.png";
-import img3 from "../../assets/operation.png";
-import img4 from "../../assets/revenue.png";
+import img1 from "../../assets/p1.png";
+import img2 from "../../assets/p2.png";
+import img3 from "../../assets/p3.png";
+import img4 from "../../assets/p4.png";
+import img5 from "../../assets/p5.png";
+
 import { Dot } from "lucide-react";
 import Image from "next/image";
 
 const sections = [
   {
-    title: "A Tailored Experience for Every Customer",
-    desc: "InstaSignTracker gives you the flexibility to design an ordering experience that matches how your customers do business.",
-    img: img1,
+    id: 1,
+    title: "Insta Sign Tracker®",
+    description:
+      "Sign Installation Management platform that provides comprehensive, user-friendly, and configurable tools to manage every aspect of sign installation operations.",
+    image: img1,
     features: [
-      "Customer-specific services, pricing, and permissions",
-      "Custom post styles, sign configurations, and install options",
-      "Personalized ordering instructions, notifications, and automated messages",
+      "Sign installation workflows including vehicle routing, utility marking, vacations, customer order review and approval, and multi-office enterprise support",
+      "Accurate and flexible inventory tracking for signs, lockboxes, and service items",
+      "Integrated billing with Stripe prepayment and terms billing",
+      "Office and agent cost splitting and cost centers",
+      "Multi-rate sales tax collection",
+      "Credit limits and QuickBooks export support",
     ],
   },
   {
-    title: "Order Anywhere. Work Everywhere.",
-    desc: "InstaSignTracker is built for modern, on-the-go teams making it easy for customers and installers to stay connected from any device, anywhere.",
-    img: img2,
+    id: 2,
+    title: "Insta Print Tracker®",
+    description:
+      "Integrated printing solution inside Insta Sign Tracker allowing agents to order printed signs directly within the platform.",
+    image: img2,
     features: [
-      "Dedicated experiences for Agents, Admins, and Installers",
-      "Works seamlessly across phones, tablets, and desktops",
-      "Web-based access with no software downloads required",
+      "Order signs from standard customer rider inventory",
+      "Create custom signs from templates",
+      "Upload new designs with instant quoting",
+      "Automatically add printed items into agent inventory",
+      "Generate print-ready files for production",
     ],
   },
   {
-    title: "Built on Powerful, Scalable Operations ",
-    desc: "InstaSignTracker is engineered to support real-world sign operations and continues to evolve as your business grows.",
-    img: img3,
+    id: 3,
+    title: "Insta Open House Tracker®",
+    description:
+      "Integrated open house management system that helps generate recurring revenue and strengthen relationships with agents.",
+    image: img3,
     features: [
-      "Designed for businesses of all sizes",
-      "Intelligent multi-level inventory tracking",
-      "Custom workflows and service rules",
+      "Purchase open house packages",
+      "Add upsell options",
+      "Reorder previous setups with one click",
+      "Schedule multi-day open houses",
+      "Manage multiple events per listing",
     ],
   },
   {
-    title: "Built for More Than One Revenue Stream",
-    desc: "Your business doesn’t stop at sign installs and neither does InstaSignTracker.",
-    img: img4,
+    id: 4,
+    title: "Insta Courier Tracker®",
+    description:
+      "Integrated courier service system for secure delivery of documents requiring wet signatures and verified chain-of-custody.",
+    image: img4,
     features: [
-      "Easily manage offices, agents, installs, and inventory",
-      "Promote featured services and add-ons",
-      "Expand into new revenue streams",
+      "Charge by package type, urgency, distance",
+      "Schedule pickups and drop-offs",
+      "Real-time driver status notifications",
+      "Photo documentation of deliveries",
+      "Full transit details and wait times",
+    ],
+  },
+  {
+    id: 5,
+    title: "Insta Photo Tracker®",
+    description:
+      "Integrated real estate photography management system within Insta Sign Tracker.",
+    image: img5,
+    features: [
+      "Schedule installation and photography together",
+      "Order photography, drone imagery, and 360° views",
+      "Integrated billing with cost centers",
+      "Network of professional photographers",
     ],
   },
 ];
 
 export function IntegratedProducts() {
   return (
-    <section className="py-16 ">
-      <div className="container mx-auto px-4 space-y-20">
+ <section className="py-20">
+      <div className="container mx-auto px-4 space-y-28">
 
         {sections.map((section, index) => (
           <div
-            key={index}
-            className={`flex flex-col lg:flex-row items-center gap-12  font-opensans md:mb-28 hover:scale-105 transition-all duration-300  ${
-              index % 2 === 0 ? "lg:flex-row-reverse justify-end" : ""
+            key={section.id}
+            className={`flex flex-col lg:flex-row w-full h-[541px] gap-6 ${
+              index % 2 === 0 ? "lg:flex-row-reverse" : ""
             }`}
           >
             {/* Image */}
-            <div className="flex-1 ">
-              <Image src={section.img} alt={section.title} />
+            <div className="w-full lg:w-1/2 h-full">
+              <Image
+                src={section.image}
+                alt={section.title}
+                className="w-full h-full object-cover rounded-xl"
+              />
             </div>
 
             {/* Content */}
-            <div className="flex-1 space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            <div className="w-full lg:w-1/2 h-full bg-white p-10 rounded-xl shadow-lg flex flex-col justify-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 {section.title}
               </h2>
 
-              <p className="text-gray-600">{section.desc}</p>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                {section.description}
+              </p>
 
               <ul className="space-y-3">
                 {section.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <Dot className="h-7 w-7 text-primary" />
+                  <li key={i} className="flex items-start gap-2">
+                    <Dot className="w-6 h-6 text-primary mt-1" />
                     <span className="text-gray-700">{feature}</span>
                   </li>
                 ))}
