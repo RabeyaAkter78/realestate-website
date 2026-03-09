@@ -17,6 +17,8 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { useTheme } from "@/components/theme-provider";
 import { useAuth } from "@/components/auth-provider";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
+import logo from "../assets/logo.png"
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -36,45 +38,11 @@ export function MainNavbar() {
   return (
     <header className="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="flex items-center justify-between bg-white/80 backdrop-blur-md rounded-full px-4 sm:px-6 py-2 shadow-lg border border-white/20">
+        <div className="flex items-center justify-between bg-white/50 backdrop-blur-md rounded-full px-4 sm:px-6 py-2 shadow-lg border border-white/20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <svg
-              viewBox="0 0 40 40"
-              className="w-8 h-8"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M5 30 L10 25 L15 28 L20 22 L25 25 L30 20 L35 25 L35 35 L5 35 Z"
-                fill="#4CAF50"
-              />
-              <path
-                d="M12 25 L20 15 L28 25 L26 25 L26 35 L14 35 L14 25 Z"
-                fill="#E53935"
-              />
-              <path
-                d="M10 25 L20 13 L30 25"
-                stroke="#C62828"
-                strokeWidth="2"
-                fill="none"
-              />
-              <rect x="17" y="28" width="6" height="7" fill="#5D4037" />
-              <rect x="15" y="22" width="4" height="4" fill="#FFF" />
-              <rect x="21" y="22" width="4" height="4" fill="#FFF" />
-              <circle cx="32" cy="12" r="5" fill="#1E88E5" />
-              <path
-                d="M32 7 L32 12 L35 12"
-                stroke="white"
-                strokeWidth="2"
-                fill="none"
-              />
-            </svg>
-            <span className="text-sm font-bold hidden sm:inline">
-              <span className="text-[#1E88E5]">Insta</span>
-              <span className="text-[#E53935]">Sign</span>
-              <span className="text-[#1E88E5]">Tracker</span>
-            </span>
+            <Image src={logo} alt="Logo" width={40} height={40} className="w-40 h-10" />
+     
           </Link>
 
           {/* Desktop Navigation */}
@@ -84,10 +52,10 @@ export function MainNavbar() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "px-4 py-2 text-sm font-medium rounded-full transition-colors",
+                  "px-4 py-2  font-medium rounded-full transition-colors",
                   pathname === item.href
                     ? "bg-[#2196F3] text-white"
-                    : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+                    : "text-black hover:text-gray-900 hover:bg-gray-100"
                 )}
               >
                 {item.label}
@@ -116,7 +84,7 @@ export function MainNavbar() {
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" className="relative h-8 w-8 rounded-full p-0">
                     <Avatar className="h-8 w-8">
-                      <AvatarFallback className="bg-[#2196F3] text-white text-sm">
+                      <AvatarFallback className="bg-[#2196F3] text-white ">
                         {user?.name?.charAt(0).toUpperCase() || "U"}
                       </AvatarFallback>
                     </Avatar>
@@ -150,18 +118,18 @@ export function MainNavbar() {
               </DropdownMenu>
             ) : (
               <>
-                <Button
+                <Button 
                   variant="outline"
                   size="sm"
                   asChild
-                  className="hidden sm:inline-flex rounded-full border-gray-300 text-gray-700 hover:bg-gray-100"
+                  className="hidden sm:inline-flex text-lg rounded border-blue-500 bg-transparent text-blue-600  hover:bg-blue-50 hover:text-blue-700"
                 >
                   <Link href="/auth/login">Sign In</Link>
                 </Button>
                 <Button 
                   size="sm" 
                   asChild 
-                  className="hidden sm:inline-flex rounded-full bg-[#2196F3] hover:bg-[#1976D2] text-white"
+                  className="hidden sm:inline-flex rounded text-lg font-medium  bg-[#2196F3] hover:bg-[#1976D2] text-white"
                 >
                   <Link href="/auth/signup">Sign Up</Link>
                 </Button>
@@ -222,7 +190,7 @@ export function MainNavbar() {
                         href={item.href}
                         onClick={() => setIsOpen(false)}
                         className={cn(
-                          "px-3 py-2 text-sm font-medium rounded-lg transition-colors",
+                          "px-3 py-2  font-medium rounded-lg transition-colors",
                           pathname === item.href
                             ? "bg-[#2196F3] text-white"
                             : "text-muted-foreground hover:text-foreground hover:bg-gray-100"
