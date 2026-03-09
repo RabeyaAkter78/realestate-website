@@ -18,7 +18,7 @@ import { useTheme } from "@/components/theme-provider";
 import { useAuth } from "@/components/auth-provider";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import logo from "../assets/logo.png"
+import logo from "../assets/logo.png";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -38,11 +38,10 @@ export function MainNavbar() {
   return (
     <header className="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="flex items-center justify-between bg-white/50 backdrop-blur-md rounded-full px-4 sm:px-6 py-2 shadow-lg border border-white/20">
+        <div className="flex items-center justify-between bg-white/50 backdrop-blur-md rounded-xl px-4 sm:px-6 py-4 shadow-accent-foreground border border-white/60 font-opensans">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <Image src={logo} alt="Logo" width={40} height={40} className="w-40 h-10" />
-     
+            <Image src={logo} alt="Logo" width={160} height={40} />
           </Link>
 
           {/* Desktop Navigation */}
@@ -55,7 +54,7 @@ export function MainNavbar() {
                   "px-4 py-2  font-medium rounded-full transition-colors",
                   pathname === item.href
                     ? "bg-[#2196F3] text-white"
-                    : "text-black hover:text-gray-900 hover:bg-gray-100"
+                    : "text-black hover:text-gray-900 hover:bg-gray-100",
                 )}
               >
                 {item.label}
@@ -82,7 +81,10 @@ export function MainNavbar() {
             {isAuthenticated ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="relative h-8 w-8 rounded-full p-0">
+                  <Button
+                    variant="ghost"
+                    className="relative h-8 w-8 rounded-full p-0"
+                  >
                     <Avatar className="h-8 w-8">
                       <AvatarFallback className="bg-[#2196F3] text-white ">
                         {user?.name?.charAt(0).toUpperCase() || "U"}
@@ -99,12 +101,20 @@ export function MainNavbar() {
                     </Avatar>
                     <div className="flex flex-col">
                       <span className="text-sm font-medium">{user?.name}</span>
-                      <span className="text-xs text-muted-foreground">{user?.email}</span>
+                      <span className="text-xs text-muted-foreground">
+                        {user?.email}
+                      </span>
                     </div>
                   </div>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem asChild>
-                    <Link href={user?.role === "agent" ? "/agent/dashboard" : "/assistant/dashboard"}>
+                    <Link
+                      href={
+                        user?.role === "agent"
+                          ? "/agent/dashboard"
+                          : "/assistant/dashboard"
+                      }
+                    >
                       <User className="mr-2 h-4 w-4" />
                       Dashboard
                     </Link>
@@ -118,7 +128,7 @@ export function MainNavbar() {
               </DropdownMenu>
             ) : (
               <>
-                <Button 
+                <Button
                   variant="outline"
                   size="sm"
                   asChild
@@ -126,9 +136,9 @@ export function MainNavbar() {
                 >
                   <Link href="/auth/login">Sign In</Link>
                 </Button>
-                <Button 
-                  size="sm" 
-                  asChild 
+                <Button
+                  size="sm"
+                  asChild
                   className="hidden sm:inline-flex rounded text-lg font-medium  bg-[#2196F3] hover:bg-[#1976D2] text-white"
                 >
                   <Link href="/auth/signup">Sign Up</Link>
@@ -139,7 +149,11 @@ export function MainNavbar() {
             {/* Mobile Menu */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="md:hidden rounded-full h-9 w-9">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="md:hidden rounded-full h-9 w-9"
+                >
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
@@ -193,7 +207,7 @@ export function MainNavbar() {
                           "px-3 py-2  font-medium rounded-lg transition-colors",
                           pathname === item.href
                             ? "bg-[#2196F3] text-white"
-                            : "text-muted-foreground hover:text-foreground hover:bg-gray-100"
+                            : "text-muted-foreground hover:text-foreground hover:bg-gray-100",
                         )}
                       >
                         {item.label}
@@ -219,13 +233,28 @@ export function MainNavbar() {
                     </Button>
                     {!isAuthenticated && (
                       <>
-                        <Button variant="outline" size="sm" asChild className="rounded-lg">
-                          <Link href="/auth/login" onClick={() => setIsOpen(false)}>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          asChild
+                          className="rounded-lg"
+                        >
+                          <Link
+                            href="/auth/login"
+                            onClick={() => setIsOpen(false)}
+                          >
                             Sign In
                           </Link>
                         </Button>
-                        <Button size="sm" asChild className="rounded-lg bg-[#2196F3] hover:bg-[#1976D2]">
-                          <Link href="/auth/signup" onClick={() => setIsOpen(false)}>
+                        <Button
+                          size="sm"
+                          asChild
+                          className="rounded-lg bg-[#2196F3] hover:bg-[#1976D2]"
+                        >
+                          <Link
+                            href="/auth/signup"
+                            onClick={() => setIsOpen(false)}
+                          >
                             Sign Up
                           </Link>
                         </Button>
