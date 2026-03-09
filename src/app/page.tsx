@@ -4,6 +4,7 @@ import { StatsSection } from "@/components/home/stats-section";
 import { TailoredExperienceSection } from "@/components/home/tailored-experience-section";
 import PlatformManage from "@/components/home/platformManage";
 import WhyChoose from "@/components/home/WhyChoose";
+import WeManage from "@/components/home/WeManage";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <TailoredExperienceSection />
         <PlatformManage />
         <WhyChoose />
+        <WeManage />
       </main>
       <MainFooter />
     </div>
