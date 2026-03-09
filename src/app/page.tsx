@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/home/hero-section";
 import { StatsSection } from "@/components/home/stats-section";
 import { TailoredExperienceSection } from "@/components/home/tailored-experience-section";
 import PlatformManage from "@/components/home/platformManage";
+import WhyChoose from "@/components/home/WhyChoose";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
         <StatsSection />
         <TailoredExperienceSection />
         <PlatformManage />
+        <WhyChoose />
       </main>
       <MainFooter />
     </div>
