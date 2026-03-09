@@ -86,11 +86,10 @@ export function IntegratedProducts() {
   return (
  <section className="py-20">
       <div className="container mx-auto px-4 space-y-28">
-
         {sections.map((section, index) => (
           <div
             key={section.id}
-            className={`flex flex-col lg:flex-row w-full h-[541px] gap-6 ${
+            className={`flex flex-col lg:flex-row w-full h-135.25 gap-6 ${
               index % 2 === 0 ? "lg:flex-row-reverse" : ""
             }`}
           >
