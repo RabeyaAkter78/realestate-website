@@ -1,45 +1,52 @@
-import { CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import Link from "next/link";
 
 const plans = [
   {
-    name: "Starter",
-    price: "$29",
+    name: "Insta Gold®",
+    price: "6.00$",
     period: "/month",
-    description: "Perfect for individual agents",
+    description:
+      "Entry-level package with more capability than many competitors’ “full-function” systems.",
     features: [
-      "Up to 20 sign trackers",
-      "Basic analytics",
+      "7,000 AI credits/month for creating images, videos, audio, and other generations",
+      "Branded mobile apps for agents, installers, and administrators",
+      "Basic analytics dashboard",
       "Email support",
-      "Mobile app access",
       "1 team member",
     ],
-    cta: "Start Free Trial",
-    popular: false,
+    cta: "Get Basic ",
   },
   {
-    name: "Professional",
+    name: "Insta Platinum®",
     price: "$79",
     period: "/month",
-    description: "Best for growing agencies",
+    description:
+      "7,000 AI credits/month for creating images, videos, audio, and other generations",
     features: [
-      "Up to 100 sign trackers",
+      "7,000 AI credits/month for creating images, videos, audio, and other generations",
       "Advanced analytics",
       "Priority support",
       "Mobile app access",
       "5 team members",
       "API access",
     ],
-    cta: "Start Free Trial",
-    popular: true,
+    cta: "Get Basic ",
   },
   {
-    name: "Enterprise",
-    price: "Custom",
+    name: "Insta Diamond®",
+    price: "$196.00",
     period: "",
-    description: "For large organizations",
+    description:
+      "Advanced solution for high-volume operations requiring priority support, advanced APIs, and enterprise-level functionality.",
     features: [
       "Unlimited sign trackers",
       "Custom analytics",
@@ -49,54 +56,71 @@ const plans = [
       "Full API access",
       "Custom integrations",
     ],
-    cta: "Contact Sales",
-    popular: false,
+    cta: "Get Basic ",
   },
 ];
 
 export default function ProductsPage() {
   return (
-    <div className="py-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">Pricing Plans</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Choose the perfect plan for your real estate business
+    <div className="py-28 bg-linear-to-b from-[#fbf2f4] to-[#ecf7fe] min-h-screen">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 font-opensans">
+        <div className="text-center mb-12 max-w-7xl mx-auto">
+          <h1 className="text-4xl font-bold mb-4 text-black/80">
+            Solutions for Every Type of Business <br />
+            <span className="text-primary">Sign Installation</span> Companies
+          </h1>
+          <p className="text-xl text-black/60 max-w-2xl mx-auto">
+            Choose from three licensing options, all including branded apps for
+            agents, installers, and administrators:
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8">
           {plans.map((plan) => (
-            <Card key={plan.name} className={plan.popular ? "border-[#1E88E5] ring-1 ring-[#1E88E5]" : ""}>
+            <Card
+              key={plan.name}
+              className="bg-white h-full flex flex-col p-5 hover:shadow-lg hover:scale-105 transition-all duration-300"
+            >
               <CardHeader>
-                {plan.popular && (
-                  <span className="inline-block px-3 py-1 text-xs font-semibold bg-[#1E88E5]/10 text-[#1E88E5] rounded-full w-fit mb-2">
-                    Most Popular
-                  </span>
-                )}
-                <CardTitle className="text-2xl">{plan.name}</CardTitle>
-                <CardDescription>{plan.description}</CardDescription>
+                <CardTitle className="text-2xl font-bold mb-3 text-black/80">
+                  {plan.name}
+                </CardTitle>
+                <CardDescription className="text-black/60">
+                  {plan.description}
+                </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-bold">{plan.price}</span>
-                  <span className="text-muted-foreground">{plan.period}</span>
+              <CardContent className="space-y-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <h1 className="text-lg font-semibold text-black/80">
+                    AI Suite with:
+                  </h1>
+                  <ul className="space-y-3 mt-4">
+                    {plan.features.map((feature) => (
+                      <li
+                        key={feature}
+                        className="flex items-start gap-2 text-black/70"
+                      >
+                        <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
+                        <span className="text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex items-baseline gap-1 mt-6">
+                    <span className="text-4xl font-bold text-black">
+                      {plan.price}
+                    </span>
+                    <span className="text-black/60">{plan.period}</span>
+                  </div>
                 </div>
-                <ul className="space-y-3">
-                  {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
-                      <span className="text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Button 
-                  className="w-full" 
-                  variant={plan.popular ? "default" : "outline"}
-                  asChild
-                >
-                  <Link href="/auth/signup">{plan.cta}</Link>
-                </Button>
+                <Link href="/auth/signup">
+                  <button
+                    className="w-full mt-6  bg-primary  text-white px-8 py-3 text-lg rounded-md flex items-center justify-center gap-2 cursor-pointer"
+                    type="button"
+                  >
+                    {plan.cta}
+                    <ArrowRight />
+                  </button>
+                </Link>
               </CardContent>
             </Card>
           ))}
