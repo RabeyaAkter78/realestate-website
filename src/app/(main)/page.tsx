@@ -1,7 +1,9 @@
 import Link from "next/link";
-import { ArrowRight, MapPin, BarChart3, Users, Shield, Zap, CheckCircle2 } from "lucide-react";
+import { ArrowRight, MapPin, BarChart3, Users, Shield, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import Testimonials from "@/components/home/Testimonials";
+import GetSTartedToday from "@/components/home/GetSTartedToday";
 
 const features = [
   {
@@ -23,19 +25,6 @@ const features = [
     icon: Shield,
     title: "Secure & Reliable",
     description: "Enterprise-grade security to protect your data.",
-  },
-];
-
-const testimonials = [
-  {
-    quote: "InstaSignTracker has revolutionized how we manage our real estate signs. It's a game-changer!",
-    author: "Sarah Johnson",
-    role: "Real Estate Agent, LA",
-  },
-  {
-    quote: "The analytics dashboard gives me insights I never had before. Highly recommended!",
-    author: "Michael Chen",
-    role: "Property Manager, NYC",
   },
 ];
 
@@ -118,48 +107,10 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">What Our Customers Say</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Trusted by thousands of real estate professionals
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {testimonials.map((testimonial) => (
-              <Card key={testimonial.author}>
-                <CardContent className="p-6">
-                  <Zap className="h-6 w-6 text-[#1E88E5] mb-4" />
-                  <p className="mb-4 text-muted-foreground">&ldquo;{testimonial.quote}&rdquo;</p>
-                  <div>
-                    <p className="font-semibold">{testimonial.author}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Testimonials />
 
-      {/* CTA Section */}
-      <section className="py-20 bg-[#1E88E5]">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Ready to Transform Your Sign Management?
-          </h2>
-          <p className="text-white/80 max-w-2xl mx-auto mb-8">
-            Join thousands of real estate professionals who trust InstaSignTracker
-          </p>
-          <Button size="lg" variant="secondary" asChild>
-            <Link href="/auth/signup">
-              Start Your Free Trial
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
-        </div>
-      </section>
+      {/* Get Started Today Section */}
+      <GetSTartedToday />
     </div>
   );
 }

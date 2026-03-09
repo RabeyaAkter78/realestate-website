@@ -5,6 +5,8 @@ import { TailoredExperienceSection } from "@/components/home/tailored-experience
 import PlatformManage from "@/components/home/platformManage";
 import WhyChoose from "@/components/home/WhyChoose";
 import WeManage from "@/components/home/WeManage";
+import GetSTartedToday from "@/components/home/GetSTartedToday";
+import Testimonials from "@/components/home/Testimonials";
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
         <PlatformManage />
         <WhyChoose />
         <WeManage />
+        <Testimonials />
+        <GetSTartedToday />
       </main>
       <MainFooter />
     </div>

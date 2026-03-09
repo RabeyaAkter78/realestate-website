@@ -27,10 +27,10 @@ const WeManage = () => {
     },
   ];
   return (
-    <section className="py-16 bg-[#eff7fc]">
+    <section className="py-16 bg-[#eaf2f7]">
       <div className="container mx-auto font-opensans px-4 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12">
-          <span className="text-primary">  We Manage</span>
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-black">
+          <span className="text-primary pr-2">  We Manage</span>
          More Than Signs
         </h2>
         <p className="text-gray-600 mb-12">Accept and manage media service requests like photography and open house setup — all from one dashboard</p>

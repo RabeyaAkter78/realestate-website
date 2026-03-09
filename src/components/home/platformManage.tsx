@@ -29,7 +29,7 @@ const PlatformManage = () => {
   return (
     <section className="py-16 bg-[#eff7fc]">
       <div className="container mx-auto font-opensans px-4 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-black">
           One platform to manage your entire{" "}
           <span className="text-primary"> Sign Installation Operation</span>
         </h2>
