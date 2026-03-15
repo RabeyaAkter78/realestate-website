@@ -35,9 +35,9 @@ const PlatformManage = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4   gap-12 ">
           {operations.map((op, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:scale-105 transition-all duration-300 ">
+            <div key={index} className="bg-white  p-6 rounded-lg shadow-md hover:scale-105 transition-all duration-300 ">
               <Image src={op.img} alt={op.title} className=" " />
-              <h3 className="text-xl font-semibold mb-4 mt-3 text-start ">{op.title}</h3>
+              <h3 className="text-xl font-semibold mb-4 mt-3 text-start text-black">{op.title}</h3>
               <p className="text-gray-600 text-start">{op.desc}</p>
             </div>
           ))}

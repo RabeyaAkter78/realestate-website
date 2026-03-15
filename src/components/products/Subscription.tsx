@@ -61,7 +61,7 @@ const plans = [
 
 export default function Subscription() {
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 font-opensans">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 font-opensans md:mt-12">
       <div className="text-center mb-12 max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold mb-4 text-black/80">
           Solutions for Every Type of Business <br />

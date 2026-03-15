@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Testimonials from "@/components/home/Testimonials";
 import GetSTartedToday from "@/components/home/GetSTartedToday";
+import Image from "next/image";
 
 const features = [
   {
@@ -69,7 +70,9 @@ export default function HomePage() {
             </div>
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img
+                <Image
+                  width={800}
+                  height={800}
                   src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80"
                   alt="Real estate sign"
                   className="w-full h-auto object-cover"

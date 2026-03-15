@@ -1,74 +1,213 @@
-import { MapPin, BarChart3, Users, Bell, Shield, Smartphone, Zap, Clock } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-
-const features = [
+/* eslint-disable react/no-unescaped-entities */
+import Image from "next/image";
+import f1 from "../../../assets/f1.png";
+import f2 from "../../../assets/f2.png";
+import f3 from "../../../assets/f3.png";
+import f4 from "../../../assets/f4.png";
+import f5 from "../../../assets/f5.png";
+import img1 from "../../../assets/f6.png";
+import img2 from "../../../assets/f7.png";
+import img3 from "../../../assets/f8.png";
+import img4 from "../../../assets/f9.png";
+const bulletPoints = [
+  "Install orders don't end after installation",
+  "Service calls are tracked in texts & emails",
+  "Inventory gets lost or miscounted",
+  "No photo proof for disputes",
+  "Installers don't know what's billable",
+];
+const operations = [
   {
-    icon: MapPin,
-    title: "GPS Tracking",
-    description: "Real-time GPS tracking for all your real estate signs. Know exactly where each sign is located at all times.",
+    title: "Admin",
+    desc: "Full Business visibility",
+    img: img1,
   },
   {
-    icon: BarChart3,
-    title: "Advanced Analytics",
-    description: "Comprehensive analytics dashboard showing sign performance, placement effectiveness, and ROI metrics.",
+    title: " Manager",
+    desc: "Manage teams & agents",
+    img: img2,
   },
   {
-    icon: Users,
-    title: "Team Collaboration",
-    description: "Manage your entire team with role-based access. Assign assistants and track their activities.",
+    title: "Agent",
+    desc: "Orders, inventory, invoices",
+    img: img3,
   },
   {
-    icon: Bell,
-    title: "Smart Notifications",
-    description: "Get instant alerts for sign movement, low battery, or when signs need maintenance.",
-  },
-  {
-    icon: Shield,
-    title: "Enterprise Security",
-    description: "Bank-level encryption and security protocols to keep your data safe and compliant.",
-  },
-  {
-    icon: Smartphone,
-    title: "Mobile Apps",
-    description: "Full-featured iOS and Android apps for managing signs on the go.",
-  },
-  {
-    icon: Zap,
-    title: "Quick Setup",
-    description: "Get started in minutes with our easy-to-use setup process and intuitive interface.",
-  },
-  {
-    icon: Clock,
-    title: "24/7 Monitoring",
-    description: "Round-the-clock monitoring ensures you never miss important sign activity.",
+    title: "Installer ",
+    desc: "Jobs & photo uploads",
+    img: img4,
   },
 ];
 
+const BulletList = () => (
+  <ul className="space-y-3">
+    {bulletPoints.map((point, index) => (
+      <li key={index} className="flex items-start gap-3 ">
+        <span className="w-2 h-2 rounded-full bg-[#1E88E5] mt-2 shrink-0"></span>
+        <span className="text-gray-500  leading-relaxed ">{point}</span>
+      </li>
+    ))}
+  </ul>
+);
+
 export default function FeaturesPage() {
   return (
-    <div className="py-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold mb-4">Powerful Features</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Everything you need to manage your real estate signs effectively and grow your business
-          </p>
-        </div>
+    <div className="min-h-screen font-opensans">
+      {/* Hero Section - Original */}
+      <section className="py-20 md:mt-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h1 className="text-4xl font-bold mb-4 font-opensans">
+              Everything You Need To Run A Real Estate <br />
+              <span className="text-[#1E88E5]">Sign Installation</span> Business
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              From installation to service calls, removals, inventory, and
+              billing — all in one platform.
+            </p>
+          </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((feature) => (
-            <Card key={feature.title} className="group hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 rounded-lg bg-[#1E88E5]/10 flex items-center justify-center mb-4 group-hover:bg-[#1E88E5]/20 transition-colors">
-                  <feature.icon className="h-6 w-6 text-[#1E88E5]" />
-                </div>
-                <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground">{feature.description}</p>
-              </CardContent>
-            </Card>
-          ))}
+          <div className="my-20">
+            <Image
+              src={f1}
+              alt="f1"
+              className="mx-auto object-cover"
+              height={800}
+              width={1344}
+            />
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* Section 1: Outstanding orders - Pink/Red background */}
+      <section className="py-28 bg-linear-to-b from-[#fbf2f4] to-[#ecf7fe]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-xl">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+                Outstanding orders that stay open until removal
+              </h2>
+              <p className="text-gray-500 mb-8 leading-relaxed">
+                A sign installation isn't a one-time job. Every order stays
+                active from install through service calls and final removal.
+              </p>
+              <BulletList />
+            </div>
+            <div className="relative">
+              <Image
+                src={f2}
+                alt="Order Management Dashboard"
+                className="rounded-lg shadow-xl w-full h-auto"
+                width={600}
+                height={400}
+                priority
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 2: Handle service requests - Light blue/white background */}
+      <section className="bg-white py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="relative order-2 lg:order-1">
+              <Image
+                src={f3}
+                alt="Service Request Management"
+                className="rounded-lg shadow-xl w-full h-auto"
+                width={600}
+                height={400}
+              />
+            </div>
+            <div className="max-w-xl order-1 lg:order-2">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+                Handle service requests without confusion
+              </h2>
+              <p className="text-gray-500 mb-8 leading-relaxed">
+                A sign installation isn't a one-time job. Every order stays
+                active from install through service calls and final removal.
+              </p>
+              <BulletList />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3: Mobile-friendly installer workflow - Light blue background */}
+      <section className="bg-[#f8fcff] py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-xl">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+                Mobile-friendly installer workflow
+              </h2>
+              <p className="text-gray-500 mb-8 leading-relaxed">
+                Installers receive clear job assignments and upload photo proof
+                directly from the field.
+              </p>
+              <BulletList />
+            </div>
+            <div className="relative">
+              <Image
+                src={f4}
+                alt="Mobile Installer Workflow"
+                className="rounded-lg h-175"
+                width={600}
+                height={400}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4: Agent-based sign inventory tracking - White background */}
+      <section className="bg-white py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="relative order-2 lg:order-1">
+              <Image
+                src={f5}
+                alt="Agent-based Inventory Tracking"
+                className="rounded-lg shadow-xl w-full h-auto"
+                width={600}
+                height={400}
+              />
+            </div>
+            <div className="max-w-xl order-1 lg:order-2">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+                Agent-based sign inventory tracking
+              </h2>
+              <p className="text-gray-500 mb-8 leading-relaxed">
+                Track inventory per real estate agent — not just globally.
+              </p>
+              <BulletList />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="py-16 bg-[#eff7fc]">
+        <div className="container mx-auto font-opensans px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-black">
+            One platform to manage your entire{" "}
+            <span className="text-primary"> Sign Installation Operation</span>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4   gap-12 ">
+            {operations.map((op, index) => (
+              <div
+                key={index}
+                className="bg-white  p-6 rounded-lg shadow-md hover:scale-105 transition-all duration-300 "
+              >
+                <Image src={op.img} alt={op.title} className=" " />
+                <h3 className="text-xl font-semibold mb-4 mt-3 text-start text-black">
+                  {op.title}
+                </h3>
+                <p className="text-gray-600 text-start">{op.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
