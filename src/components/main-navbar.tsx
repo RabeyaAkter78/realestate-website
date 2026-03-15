@@ -69,10 +69,10 @@ export function MainNavbar() {
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
-              className="hidden sm:flex rounded-full h-9 w-9"
+              className="hidden sm:flex rounded-full  h-9 w-9"
             >
               {resolvedTheme === "dark" ? (
-                <Sun className="h-5 w-5" />
+                <Sun className="h-5 w-5 text-neutral-900" />
               ) : (
                 <Moon className="h-5 w-5" />
               )}
