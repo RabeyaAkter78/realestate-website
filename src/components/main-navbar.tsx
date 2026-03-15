@@ -134,14 +134,14 @@ export function MainNavbar() {
                   asChild
                   className="hidden sm:inline-flex text-lg rounded border-blue-500 bg-transparent text-blue-600  hover:bg-blue-50 hover:text-blue-700"
                 >
-                  <Link href="/auth/login">Sign In</Link>
+                  <Link href="/login">Sign In</Link>
                 </Button>
                 <Button
                   size="sm"
                   asChild
                   className="hidden sm:inline-flex rounded text-lg  font-medium  bg-[#2196F3] hover:bg-[#1976D2] text-white"
                 >
-                  <Link href="/auth/signup">Sign Up</Link>
+                  <Link href="/signup">Sign Up</Link>
                 </Button>
               </>
             )}
