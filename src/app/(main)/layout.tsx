@@ -1,7 +1,5 @@
 "use client";
 
-import { MainFooter } from "@/components/main-footer";
-import { MainNavbar } from "@/components/main-navbar";
 
 // import { MainNavbar } from "@/components/main-navbar";
 // import { MainFooter } from "@/components/main-footer";
@@ -13,9 +11,9 @@ export default function MainLayout({
 }>) {
   return (
     <div>
-       <MainNavbar />
+       {/* <MainNavbar /> */}
         {children}
-        <MainFooter />
+        {/* <MainFooter /> */}
     </div>
   );
 }

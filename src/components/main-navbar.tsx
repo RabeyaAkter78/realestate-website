@@ -65,7 +65,7 @@ export function MainNavbar() {
           {/* Right side actions */}
           <div className="flex items-center gap-2">
             {/* Theme Toggle */}
-            <Button
+            {/* <Button
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
@@ -76,7 +76,7 @@ export function MainNavbar() {
               ) : (
                 <Moon className="h-5 w-5" />
               )}
-            </Button>
+            </Button> */}
 
             {isAuthenticated ? (
               <DropdownMenu>

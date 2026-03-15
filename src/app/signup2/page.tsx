@@ -2,20 +2,18 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Eye, EyeOff } from "lucide-react";
+import { ArrowLeft, MapPin } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import authImg from "../../assets/auth.png";
 
-export default function SignUpPage() {
-  const [showPassword, setShowPassword] = useState(false);
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [howDidYouHear, setHowDidYouHear] = useState("");
+export default function SignUp2Page() {
+  const [companyName, setCompanyName] = useState("");
+  const [companyEmail, setCompanyEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
   const router = useRouter();
 
   return (
@@ -37,13 +35,13 @@ export default function SignUpPage() {
           {/* Header */}
           <div className="flex items-center justify-between mb-8">
             <Link
-              href="/"
+              href="/signup"
               className="inline-flex items-center text-gray-600 hover:text-gray-900 transition-colors"
             >
               <ArrowLeft className="w-5 h-5 mr-2" />
               <span className="text-sm">Back</span>
             </Link>
-            <span className="text-sm text-blue-600 font-medium">Step :01</span>
+            <span className="text-sm text-blue-600 font-medium">Step :02</span>
           </div>
 
           {/* Heading */}
@@ -65,99 +63,82 @@ export default function SignUpPage() {
 
           {/* Form */}
           <form className="space-y-4">
-            {/* First Name and Last Name */}
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-900 mb-1">
-                  First Name
-                </label>
-                <Input
-                  type="text"
-                  placeholder="Asadujjaman"
-                  value={firstName}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFirstName(e.target.value)}
-                  required
-                  className="w-full h-11"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-900 mb-1">
-                  Last Name
-                </label>
-                <Input
-                  type="text"
-                  placeholder="Asadujjaman"
-                  value={lastName}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setLastName(e.target.value)}
-                  required
-                  className="w-full h-11"
-                />
-              </div>
-            </div>
-
-            {/* Email */}
+            {/* Company Name */}
             <div>
               <label className="block text-sm font-medium text-gray-900 mb-1">
-                Email
+                Company Name
+              </label>
+              <Input
+                type="text"
+                placeholder="Asadujjaman"
+                value={companyName}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setCompanyName(e.target.value)}
+                required
+                className="w-full h-11"
+              />
+            </div>
+
+            {/* Company Email */}
+            <div>
+              <label className="block text-sm font-medium text-gray-900 mb-1">
+                Company Email
               </label>
               <Input
                 type="email"
                 placeholder="Asadujjaman@gmail.com"
-                value={email}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+                value={companyEmail}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setCompanyEmail(e.target.value)}
                 required
                 className="w-full h-11"
               />
             </div>
 
-            {/* Password */}
+            {/* Phone */}
             <div>
               <label className="block text-sm font-medium text-gray-900 mb-1">
-                Password
+                Phone
               </label>
-              <div className="relative">
+              <div className="relative flex items-center">
+                <div className="absolute left-3 top-1/2 -translate-y-1/2 flex items-center gap-2 z-10">
+                  <span className="text-lg">🇧🇩</span>
+                  <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
                 <Input
-                  type={showPassword ? "text" : "password"}
-                  placeholder="**********"
-                  value={password}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
+                  type="tel"
+                  placeholder="+1 111 467 378 399"
+                  value={phone}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPhone(e.target.value)}
                   required
-                  className="w-full h-11 pr-10"
+                  className="w-full h-11 pl-16"
                 />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
-                >
-                  {showPassword ? (
-                    <EyeOff className="h-5 w-5" />
-                  ) : (
-                    <Eye className="h-5 w-5" />
-                  )}
-                </button>
               </div>
             </div>
 
-            {/* How Did You Hear About Us? */}
+            {/* Address */}
             <div>
               <label className="block text-sm font-medium text-gray-900 mb-1">
-                How Did You Hear About Us?
+                Address
               </label>
-              <Input
-                type="text"
-                placeholder="Asadujjaman@gmail.com"
-                value={howDidYouHear}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setHowDidYouHear(e.target.value)}
-                required
-                className="w-full h-11"
-              />
+              <div className="relative">
+                <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <Input
+                  type="text"
+                  placeholder="Dhaka ,Bangladesh"
+                  value={address}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => setAddress(e.target.value)}
+                  required
+                  className="w-full h-11 pl-10"
+                />
+              </div>
             </div>
 
             {/* Next Button */}
             <div className="pt-2">
               <Button
                 type="button"
-                onClick={() => router.push("/signup2")}
+                onClick={() => router.push("/choosePlan")}
                 className="w-full h-12 text-base bg-primary hover:bg-blue-700 text-white font-semibold rounded-lg"
               >
                 Next
