@@ -96,8 +96,8 @@ export function MainFooter() {
           <div>
             <h3 className="font-semibold mb-3">Product</h3>
             <ul className="space-y-2">
-              {footerLinks.product.map((link) => (
-                <li key={link.href}>
+              {footerLinks.product.map((link, index) => (
+                <li key={`${link.label}-${index}`}>
                   <Link
                     href={link.href}
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -112,8 +112,8 @@ export function MainFooter() {
           <div>
             <h3 className="font-semibold mb-3">Company</h3>
             <ul className="space-y-2">
-              {footerLinks.company.map((link) => (
-                <li key={link.href}>
+              {footerLinks.company.map((link, index) => (
+                <li key={`${link.label}-${index}`}>
                   <Link
                     href={link.href}
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -128,8 +128,8 @@ export function MainFooter() {
           <div>
             <h3 className="font-semibold mb-3">Legal</h3>
             <ul className="space-y-2">
-              {footerLinks.legal.map((link) => (
-                <li key={link.href}>
+              {footerLinks.legal.map((link, index) => (
+                <li key={`${link.label}-${index}`}>
                   <Link
                     href={link.href}
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors"

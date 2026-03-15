@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
-import { ArrowRight, Calendar, FileText } from "lucide-react";
 import Link from "next/link";
-
+import { Calendar, ChevronRight } from "lucide-react";
 const posts = [
   {
     id: 1,
@@ -46,7 +47,6 @@ const posts = [
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&q=80",
   },
 ];
-
 const topBlogs = [
   {
     id: 1,
@@ -65,59 +65,71 @@ const topBlogs = [
   },
 ];
 
-export default function BlogPage() {
+export default function BlogDetailPage({ params }: { params: { id: string } }) {
   return (
-    <div className="min-h-screen bg-linear-to-b from-[#fdf2f2] via-white to-[#ecf7fe] py-20 md:py-28 font-opensans">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <FileText className="w-4 h-4" />
-            Blog
-          </div>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 max-w-4xl mx-auto leading-tight">
-            Insights for Real Estate Sign & Field Service Businesses
-          </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Practical guides, product updates, and industry insights from Insta Sign Tracker®
-          </p>
-        </div>
+    <div className="min-h-screen bg-linear-to-b from-[#fdf2f2] via-white to-[#ecf7fe] py-8 md:py-28 font-opensans">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 ">
+        {/* Breadcrumbs */}
+        <nav className="flex items-center gap-2 text-sm text-gray-500 mb-8">
+          <Link href="/" className="hover:text-gray-900 transition-colors">
+            Home
+          </Link>
+          <ChevronRight className="w-4 h-4" />
+          <Link href="/blog" className="hover:text-gray-900 transition-colors">
+            Blogs
+          </Link>
+          <ChevronRight className="w-4 h-4" />
+          <span className="text-gray-900">Blogs details</span>
+        </nav>
 
         {/* Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          {/* Blog Cards - 3 columns */}
-          <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {posts.map((post) => (
-              <Link key={post.id} href={`/blog/${post.id}`} className="group">
-                <div className="bg-white rounded-2xl overflow-hidden  transition-shadow duration-300">
-                  <div className="aspect-4/3 overflow-hidden">
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      width={400}
-                      height={300}
-                    />
-                  </div>
-                  <div className="p-5">
-                    <h3 className="text-lg font-bold text-gray-900 mb-3 leading-snug group-hover:text-blue-600 transition-colors">
-                      {post.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                      {post.excerpt}
-                    </p>
-                    <div className="flex items-center gap-2 text-gray-500 text-sm mb-4">
-                      <Calendar className="w-4 h-4" />
-                      {post.date}
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-900 font-semibold text-sm group-hover:text-blue-600 transition-colors">
-                      Read More
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            ))}
+          {/* Main Content */}
+          <div className="lg:col-span-3">
+            {/* Featured Image */}
+            <div className="rounded-2xl overflow-hidden shadow-xl mb-8">
+              <Image
+                src={"https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900&q=80"}
+                alt="Blog Featured Image"
+                className="w-full h-auto object-cover"
+                width={900}
+                height={500}
+                priority
+              />
+            </div>
+
+            {/* Date */}
+            <div className="flex items-center gap-2 text-gray-500 mb-6">
+              <Calendar className="w-5 h-5" />
+              <span className="text-sm">20-01-2026</span>
+            </div>
+
+            {/* Title */}
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+              How Real Estate Sign Companies Lose Inventory (Without Realizing It)
+            </h1>
+
+            {/* Content */}
+            <div className="prose prose-lg max-w-none">
+              <p className="text-gray-600 leading-relaxed mb-6">
+                Managing real estate signs isn't just about placing posts in the ground. For most sign companies and brokerages, it involves tracking inventory, coordinating installers, handling service requests, billing agents, and ensuring nothing gets lost or damaged. Yet many businesses still rely on spreadsheets, phone calls, and manual processes — creating unnecessary delays and costly mistakes.
+              </p>
+
+              <h2 className="text-xl font-bold text-gray-900 mb-4">Key Sections</h2>
+
+              <ul className="space-y-2 text-gray-600 mb-6">
+                <li>• Why sign installation becomes chaotic at scale</li>
+                <li>
+                  • Common operational problems:
+                  <ul className="ml-6 mt-2 space-y-1">
+                    <li>• Lost signs</li>
+                    <li>• Missed service requests</li>
+                    <li>• Manual invoicing</li>
+                    <li>• No visibility into inventory</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* Top Blog Sidebar */}
