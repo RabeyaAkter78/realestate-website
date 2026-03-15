@@ -33,14 +33,10 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="max-w-xl">
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                <span className="">Built</span> by a real sign installation
-                company
+           Built by a real sign installation company
               </h1>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                InstaSignTracker was created by sign installation professionals
-                who understand the real-world challenges of managing sign
-                operations. We've experienced the same frustrations with lost
-                inventory, missed service calls, and billing disputes.
+              InstaSign Tracker was created to solve real operational problems faced by real estate sign installation businesses.
               </p>
               <button className="bg-primary text-white px-12 py-2 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors duration-300 flex items-center justify-center shadow-md">
                 Sign Up
@@ -68,12 +64,7 @@ export default function AboutPage() {
             WHY WE <span className="text-primary">BUILT</span> THIS
           </h2>
           <p className="text-lg text-gray-500 leading-relaxed text-center">
-            After years of running our own sign installation business, we grew
-            frustrated with generic software that didn't understand our unique
-            workflow. Orders would close after installation, making it
-            impossible to track ongoing service needs. Inventory would disappear
-            between jobs, and there was no way to prove work was actually
-            completed. We built InstaSignTracker to solve these real problems.
+         We run a real estate sign installation business. Like many companies, we struggled with tracking installs, service calls, inventory, and billing across emails, texts, and spreadsheets.So we built a system to manage our own operations — and realized other sign companies needed the same thing.
           </p>
         </div>
       </section>
