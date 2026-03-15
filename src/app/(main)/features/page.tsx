@@ -54,9 +54,9 @@ export default function FeaturesPage() {
   return (
     <div className="min-h-screen font-opensans">
       {/* Hero Section - Original */}
-      <section className="py-20 md:mt-20">
+      <section className="py-20 md:mt-20 animate-fade-in">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 animate-slide-up">
             <h1 className="text-4xl font-bold mb-4 font-opensans">
               Everything You Need To Run A Real Estate <br />
               <span className="text-[#1E88E5]">Sign Installation</span> Business
@@ -67,7 +67,7 @@ export default function FeaturesPage() {
             </p>
           </div>
 
-          <div className="my-20">
+          <div className="my-20 animate-fade-in-up">
             <Image
               src={f1}
               alt="f1"
@@ -80,10 +80,10 @@ export default function FeaturesPage() {
       </section>
 
       {/* Section 1: Outstanding orders - Pink/Red background */}
-      <section className="py-28 bg-linear-to-b from-[#fbf2f4] to-[#ecf7fe]">
+      <section className="py-28 bg-linear-to-b from-[#fbf2f4] to-[#ecf7fe] animate-fade-in">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="max-w-xl">
+            <div className="max-w-xl animate-slide-left">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
                 Outstanding orders that stay open until removal
               </h2>
@@ -93,11 +93,11 @@ export default function FeaturesPage() {
               </p>
               <BulletList />
             </div>
-            <div className="relative">
+            <div className="relative animate-slide-right">
               <Image
                 src={f2}
                 alt="Order Management Dashboard"
-                className="rounded-lg shadow-xl w-full h-auto"
+                className="rounded-lg shadow-xl w-full h-auto hover:scale-105 transition-transform duration-300"
                 width={600}
                 height={400}
                 priority
@@ -108,19 +108,19 @@ export default function FeaturesPage() {
       </section>
 
       {/* Section 2: Handle service requests - Light blue/white background */}
-      <section className="bg-white py-20">
+      <section className="bg-white py-20 animate-fade-in">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative order-2 lg:order-1">
+            <div className="relative order-2 lg:order-1 animate-slide-left">
               <Image
                 src={f3}
                 alt="Service Request Management"
-                className="rounded-lg shadow-xl w-full h-auto"
+                className="rounded-lg shadow-xl w-full h-auto hover:scale-105 transition-transform duration-300"
                 width={600}
                 height={400}
               />
             </div>
-            <div className="max-w-xl order-1 lg:order-2">
+            <div className="max-w-xl order-1 lg:order-2 animate-slide-right">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
                 Handle service requests without confusion
               </h2>
@@ -135,10 +135,10 @@ export default function FeaturesPage() {
       </section>
 
       {/* Section 3: Mobile-friendly installer workflow - Light blue background */}
-      <section className="bg-[#f8fcff] py-20">
+      <section className="bg-[#f8fcff] py-20 animate-fade-in">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="max-w-xl">
+            <div className="max-w-xl animate-slide-left">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
                 Mobile-friendly installer workflow
               </h2>
@@ -148,11 +148,11 @@ export default function FeaturesPage() {
               </p>
               <BulletList />
             </div>
-            <div className="relative">
+            <div className="relative animate-slide-right">
               <Image
                 src={f4}
                 alt="Mobile Installer Workflow"
-                className="rounded-lg h-175"
+                className="rounded-lg h-175 hover:scale-105 transition-transform duration-300"
                 width={600}
                 height={400}
               />
@@ -162,19 +162,19 @@ export default function FeaturesPage() {
       </section>
 
       {/* Section 4: Agent-based sign inventory tracking - White background */}
-      <section className="bg-white py-20">
+      <section className="bg-white py-20 animate-fade-in">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative order-2 lg:order-1">
+            <div className="relative order-2 lg:order-1 animate-slide-left">
               <Image
                 src={f5}
                 alt="Agent-based Inventory Tracking"
-                className="rounded-lg shadow-xl w-full h-auto"
+                className="rounded-lg shadow-xl w-full h-auto hover:scale-105 transition-transform duration-300"
                 width={600}
                 height={400}
               />
             </div>
-            <div className="max-w-xl order-1 lg:order-2">
+            <div className="max-w-xl order-1 lg:order-2 animate-slide-right">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
                 Agent-based sign inventory tracking
               </h2>
@@ -186,9 +186,9 @@ export default function FeaturesPage() {
           </div>
         </div>
       </section>
-      <section className="py-16 bg-[#eff7fc]">
+      <section className="py-16 bg-[#eff7fc] animate-fade-in">
         <div className="container mx-auto font-opensans px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-black">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-black animate-slide-up">
             One platform to manage your entire{" "}
             <span className="text-primary"> Sign Installation Operation</span>
           </h2>
@@ -196,7 +196,8 @@ export default function FeaturesPage() {
             {operations.map((op, index) => (
               <div
                 key={index}
-                className="bg-white  p-6 rounded-lg shadow-md hover:scale-105 transition-all duration-300 "
+                className="bg-white  p-6 rounded-lg shadow-md hover:scale-105 transition-all duration-300 animate-fade-in-up"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
                 <Image src={op.img} alt={op.title} className=" " />
                 <h3 className="text-xl font-semibold mb-4 mt-3 text-start text-black">
