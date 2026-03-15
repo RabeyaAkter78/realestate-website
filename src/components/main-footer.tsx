@@ -1,40 +1,30 @@
 import Link from "next/link";
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Instagram, Youtube } from "lucide-react";
 
 const footerLinks = {
-  product: [
+  products: [
+    { label: "Pricing", href: "#" },
     { label: "Features", href: "/features" },
-    { label: "Products", href: "/products" },
-    { label: "FAQ", href: "/faq" },
-    { label: "Blog", href: "/blog" },
   ],
   company: [
-    { label: "About us", href: "/about" },
-    { label: "Careers", href: "#" },
-    { label: "Contact", href: "#" },
-    { label: "Partners", href: "#" },
-  ],
-  legal: [
-    { label: "Privacy Policy", href: "#" },
-    { label: "Terms of Service", href: "#" },
-    { label: "Cookie Policy", href: "#" },
+    { label: "About Us", href: "/about" },
+    { label: "Contact Us", href: "#" },
   ],
 };
 
 const socialLinks = [
   { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
   { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Youtube, href: "#", label: "YouTube" },
 ];
 
 export function MainFooter() {
   return (
-    <footer className="border-t bg-muted/30">
+    <footer className="bg-[#1a1a1a] text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-          {/* Brand */}
-          <div className="lg:col-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Left Side - Logo and Description */}
+          <div>
             <Link href="/" className="flex items-center gap-2 mb-4">
               <svg
                 viewBox="0 0 40 40"
@@ -68,96 +58,82 @@ export function MainFooter() {
                 />
               </svg>
               <span className="text-lg font-bold">
-                <span className="text-[#1E88E5]">Insta</span>
-                <span className="text-[#E53935]">Sign</span>
-                <span className="text-[#1E88E5]">Tracker</span>
+                <span className="text-[#E53935]">Insta</span>
+                <span className="text-[#1E88E5]">Sign</span>
+                <span className="text-[#E53935]">Tracker</span>
               </span>
             </Link>
-            <p className="text-sm text-muted-foreground mb-4 max-w-xs">
-              Streamline your real estate sign management with our innovative tracking solution.
+            <p className="text-sm text-gray-400 mb-6 max-w-md">
+              InstaSign Tracker Helps Real Estate Sign Companies Manage Installations, Service Calls, Inventory, And Installers From One Platform.
             </p>
-            <div className="flex flex-col gap-2 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <Mail className="h-4 w-4" />
-                <span>contact@instasigntracker.com</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone className="h-4 w-4" />
-                <span>+1 (555) 123-4567</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="h-4 w-4" />
-                <span>123 Real Estate Blvd, CA 90210</span>
-              </div>
+            <div className="flex items-center gap-4">
+              {socialLinks.map((social) => (
+                <Link
+                  key={social.label}
+                  href={social.href}
+                  className="text-gray-400 hover:text-white transition-colors"
+                  aria-label={social.label}
+                >
+                  <social.icon className="h-5 w-5" />
+                </Link>
+              ))}
             </div>
           </div>
 
-          {/* Links */}
-          <div>
-            <h3 className="font-semibold mb-3">Product</h3>
-            <ul className="space-y-2">
-              {footerLinks.product.map((link, index) => (
-                <li key={`${link.label}-${index}`}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Right Side - Links */}
+          <div className="grid grid-cols-2 gap-8">
+            <div>
+              <h3 className="font-semibold mb-4 text-white">Products</h3>
+              <ul className="space-y-3">
+                {footerLinks.products.map((link, index) => (
+                  <li key={`${link.label}-${index}`}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-gray-400 hover:text-white transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div>
-            <h3 className="font-semibold mb-3">Company</h3>
-            <ul className="space-y-2">
-              {footerLinks.company.map((link, index) => (
-                <li key={`${link.label}-${index}`}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold mb-3">Legal</h3>
-            <ul className="space-y-2">
-              {footerLinks.legal.map((link, index) => (
-                <li key={`${link.label}-${index}`}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <div>
+              <h3 className="font-semibold mb-4 text-white">Company</h3>
+              <ul className="space-y-3">
+                {footerLinks.company.map((link, index) => (
+                  <li key={`${link.label}-${index}`}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-gray-400 hover:text-white transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
         {/* Bottom */}
-        <div className="border-t mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} InstaSignTracker. All rights reserved.
+        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-gray-500">
+            All rights Reserved To InstaSignTracker
           </p>
-          <div className="flex items-center gap-4">
-            {socialLinks.map((social) => (
-              <Link
-                key={social.label}
-                href={social.href}
-                className="text-muted-foreground hover:text-foreground transition-colors"
-                aria-label={social.label}
-              >
-                <social.icon className="h-5 w-5" />
-              </Link>
-            ))}
+          <div className="flex items-center gap-6">
+            <Link
+              href="#"
+              className="text-sm text-gray-400 hover:text-white transition-colors"
+            >
+              Privacy policy
+            </Link>
+            <Link
+              href="#"
+              className="text-sm text-gray-400 hover:text-white transition-colors"
+            >
+              Terms and Conditions
+            </Link>
           </div>
         </div>
       </div>

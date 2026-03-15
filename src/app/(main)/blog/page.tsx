@@ -6,61 +6,76 @@ const posts = [
   {
     id: 1,
     title: "10 Ways to Maximize Your Real Estate Sign ROI",
-    excerpt: "Learn proven strategies to get the most out of your real estate signage investment and attract more qualified leads.",
+    excerpt:
+      "Learn proven strategies to get the most out of your real estate signage investment and attract more qualified leads.",
     date: "Mar 5, 2026",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&q=80",
+    image:
+      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&q=80",
   },
   {
     id: 2,
     title: "The Future of Real Estate Marketing",
-    excerpt: "Discover how technology is transforming the way agents market properties and engage with potential buyers.",
+    excerpt:
+      "Discover how technology is transforming the way agents market properties and engage with potential buyers.",
     date: "Mar 3, 2026",
-    image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?w=400&q=80",
+    image:
+      "https://images.unsplash.com/photo-1460317442991-0ec209397118?w=400&q=80",
   },
   {
     id: 3,
     title: "Building a High-Performing Real Estate Team",
-    excerpt: "Expert tips on recruiting, training, and managing assistants to grow your real estate business effectively.",
+    excerpt:
+      "Expert tips on recruiting, training, and managing assistants to grow your real estate business effectively.",
     date: "Feb 28, 2026",
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=400&q=80",
+    image:
+      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=400&q=80",
   },
   {
     id: 4,
     title: "Seasonal Sign Placement Strategies",
-    excerpt: "How to optimize your sign placement throughout the year to match market conditions and buyer behavior.",
+    excerpt:
+      "How to optimize your sign placement throughout the year to match market conditions and buyer behavior.",
     date: "Feb 25, 2026",
-    image: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=400&q=80",
+    image:
+      "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=400&q=80",
   },
   {
     id: 5,
     title: "Digital vs. Traditional Marketing for Agents",
-    excerpt: "Finding the right balance between online marketing and traditional methods like signage for maximum impact.",
+    excerpt:
+      "Finding the right balance between online marketing and traditional methods like signage for maximum impact.",
     date: "Feb 20, 2026",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80",
+    image:
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80",
   },
   {
     id: 6,
     title: "Case Study: How One Agent Doubled Their Listings",
-    excerpt: "An in-depth look at how strategic sign management helped transform a struggling agent's business.",
+    excerpt:
+      "An in-depth look at how strategic sign management helped transform a struggling agent's business.",
     date: "Feb 18, 2026",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&q=80",
+    image:
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&q=80",
   },
 ];
 
 const topBlogs = [
   {
     id: 1,
-    title: "How Real Estate Sign Companies Lose Inventory (Without Realizing It)",
+    title:
+      "How Real Estate Sign Companies Lose Inventory (Without Realizing It)",
     date: "20-01-2026",
   },
   {
     id: 2,
-    title: "How Real Estate Sign Companies Lose Inventory (Without Realizing It)",
+    title:
+      "How Real Estate Sign Companies Lose Inventory (Without Realizing It)",
     date: "20-01-2026",
   },
   {
     id: 3,
-    title: "How Real Estate Sign Companies Lose Inventory (Without Realizing It)",
+    title:
+      "How Real Estate Sign Companies Lose Inventory (Without Realizing It)",
     date: "20-01-2026",
   },
 ];
@@ -79,7 +94,8 @@ export default function BlogPage() {
             Insights for Real Estate Sign & Field Service Businesses
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Practical guides, product updates, and industry insights from Insta Sign Tracker®
+            Practical guides, product updates, and industry insights from Insta
+            Sign Tracker®
           </p>
         </div>
 
@@ -89,7 +105,7 @@ export default function BlogPage() {
           <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {posts.map((post) => (
               <Link key={post.id} href={`/blog/${post.id}`} className="group">
-                <div className="bg-white rounded-2xl overflow-hidden  transition-shadow duration-300">
+                <div className=" rounded-2xl overflow-hidden  transition-shadow duration-300">
                   <div className="aspect-4/3 overflow-hidden">
                     <Image
                       src={post.image}
@@ -100,7 +116,7 @@ export default function BlogPage() {
                     />
                   </div>
                   <div className="p-5">
-                    <h3 className="text-lg font-bold text-gray-900 mb-3 leading-snug group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-lg font-bold text-gray-900 mb-3 leading-snug group-hover:text-primary transition-colors">
                       {post.title}
                     </h3>
                     <p className="text-gray-600 text-sm mb-4 leading-relaxed">
@@ -110,7 +126,7 @@ export default function BlogPage() {
                       <Calendar className="w-4 h-4" />
                       {post.date}
                     </div>
-                    <div className="flex items-center gap-2 text-gray-900 font-semibold text-sm group-hover:text-blue-600 transition-colors">
+                    <div className="flex items-center gap-2 text-gray-900 font-semibold text-sm group-hover:text-primary transition-colors">
                       Read More
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -126,8 +142,12 @@ export default function BlogPage() {
               <h3 className="text-xl font-bold text-gray-900 mb-6">Top Blog</h3>
               <div className="space-y-6">
                 {topBlogs.map((blog) => (
-                  <Link key={blog.id} href={`/blog/${blog.id}`} className="group block">
-                    <h4 className="text-sm font-semibold text-gray-900 mb-2 leading-snug group-hover:text-blue-600 transition-colors">
+                  <Link
+                    key={blog.id}
+                    href={`/blog/${blog.id}`}
+                    className="group block"
+                  >
+                    <h4 className="text-sm font-semibold text-gray-900 mb-2 leading-snug group-hover:text-primary transition-colors">
                       {blog.title}
                     </h4>
                     <div className="flex items-center gap-2 text-gray-500 text-xs">
