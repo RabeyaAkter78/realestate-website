@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 "use client";
 
 import { useState } from "react";
@@ -8,8 +7,8 @@ import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import authImg from "../../../assets/auth.png";
-import logo from "../../../assets/logo.png";
+import authImg from "../../assets/auth.png";
+import logo from "../../assets/logo.png";
 
 export default function ForgetPasswordPage() {
   const [email, setEmail] = useState("");

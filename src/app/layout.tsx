@@ -1,3 +1,5 @@
+"use client";
+
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
@@ -5,6 +7,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { AuthProvider } from "@/components/auth-provider";
 import { MainNavbar } from "@/components/main-navbar";
 import { Open_Sans } from "next/font/google";
+import { MainFooter } from "@/components/main-footer";
+import { usePathname } from "next/navigation";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -12,22 +16,24 @@ const openSans = Open_Sans({
   variable: "--font-opensans",
 });
 
-
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-sans",
-  weight: ["300","400","500","600","700"],
+  weight: ["300", "400", "500", "600", "700"],
 });
-export const metadata: Metadata = {
-  title: "InstaSignTracker - Real Estate Sign Management",
-  description: "Streamline your real estate sign management with our innovative tracking solution.",
-};
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = usePathname();
+  const isAuthPage = pathname?.startsWith('/login') || 
+                    pathname?.startsWith('/signup') || 
+                    pathname?.startsWith('/forget-password') || 
+                    pathname?.startsWith('/otp-verification') || 
+                    pathname?.startsWith('/reset-password');
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body
@@ -35,8 +41,9 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <AuthProvider>
-            <MainNavbar />
+            {!isAuthPage && <MainNavbar />}
             {children}
+            {!isAuthPage && <MainFooter />}
           </AuthProvider>
         </ThemeProvider>
       </body>

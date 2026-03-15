@@ -7,15 +7,13 @@ import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import authImg from "../../../assets/auth.png";
-import logo from "../../../assets/logo.png";
+import authImg from "../../assets/auth.png";
+import logo from "../../assets/logo.png";
 
-export default function SignUpPage() {
+export default function SignInPage() {
   const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
   const router = useRouter();
 
   return (
@@ -55,15 +53,15 @@ export default function SignUpPage() {
 
           {/* Title */}
           <h2 className="text-3xl font-bold text-foreground mb-2">
-            Create your account
+            Sign in to your account
           </h2>
           <p className="text-foreground/60 mb-8">
-            Already have an account?{" "}
+            Don&apos;t have an account?{" "}
             <Link
-              href="/auth/login"
+              href="/signup"
               className="text-primary hover:underline font-medium"
             >
-              Sign in
+              Join here
             </Link>
           </p>
 
@@ -74,7 +72,7 @@ export default function SignUpPage() {
             </label>
             <Input
               type="email"
-              placeholder="Enter your email"
+              placeholder="asadujjaman@gmail.com"
               value={email}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
               className="w-full"
@@ -82,7 +80,7 @@ export default function SignUpPage() {
           </div>
 
           {/* Password Input */}
-          <div className="mb-6">
+          <div className="mb-2">
             <label className="block text-sm font-medium text-foreground mb-2">
               Password
             </label>
@@ -108,39 +106,22 @@ export default function SignUpPage() {
             </div>
           </div>
 
-          {/* Confirm Password Input */}
-          <div className="mb-6">
-            <label className="block text-sm font-medium text-foreground mb-2">
-              Confirm Password
-            </label>
-            <div className="relative">
-              <Input
-                type={showConfirmPassword ? "text" : "password"}
-                placeholder="••••••••"
-                value={confirmPassword}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setConfirmPassword(e.target.value)}
-                className="w-full pr-10"
-              />
-              <button
-                type="button"
-                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-foreground/60 hover:text-foreground transition-colors"
-              >
-                {showConfirmPassword ? (
-                  <EyeOff className="w-5 h-5" />
-                ) : (
-                  <Eye className="w-5 h-5" />
-                )}
-              </button>
-            </div>
+          {/* Forgot Password Link */}
+          <div className="mb-6 text-right">
+            <Link
+              href="/forget-password"
+              className="text-sm text-foreground/60 hover:text-foreground"
+            >
+              Forgot Password?
+            </Link>
           </div>
 
-          {/* Sign Up Button */}
+          {/* Sign In Button */}
           <Button
             onClick={() => router.push("/")}
             className="w-full h-11 text-base bg-primary hover:bg-primary/90 text-white mb-6"
           >
-            Sign Up
+            Sign In
           </Button>
 
           {/* Terms */}
