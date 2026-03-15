@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import authImg from "../../../assets/auth.png";
 import logo from "../../../assets/logo.png";
+
 export default function SignInPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
@@ -57,7 +58,7 @@ export default function SignInPage() {
           <p className="text-foreground/60 mb-8">
             Don&apos;t have an account?{" "}
             <Link
-              href="/sign-up"
+              href="/auth/signup"
               className="text-primary hover:underline font-medium"
             >
               Join here
@@ -73,7 +74,7 @@ export default function SignInPage() {
               type="email"
               placeholder="asadujjaman@gmail.com"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
               className="w-full"
             />
           </div>
@@ -88,7 +89,7 @@ export default function SignInPage() {
                 type={showPassword ? "text" : "password"}
                 placeholder="••••••••"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
                 className="w-full pr-10"
               />
               <button
@@ -126,11 +127,11 @@ export default function SignInPage() {
           {/* Terms */}
           <p className="text-xs text-foreground/60 text-center">
             By joining, you agree to the{" "}
-            <Link href="#" className="text-primary hover:underline">
+            <Link href="/terms" className="text-primary hover:underline">
               Terms of Service
             </Link>{" "}
             and Please read our{" "}
-            <Link href="#" className="text-primary hover:underline">
+            <Link href="/privacy" className="text-primary hover:underline">
               Privacy Policy
             </Link>{" "}
             to learn how we use your personal data.
