@@ -32,10 +32,10 @@ export function HeroSection() {
             <div className="pt-4">
               <Button
                 size="lg"
-                className="bg-[var(--primary)] hover:bg-primary/20 text-white px-8 py-6 text-lg rounded-md"
+                className="bg-primary hover:bg-primary/20 text-white px-8 py-6 text-lg rounded-md"
                 asChild
               >
-                <Link href="/auth/signup" className="flex items-center gap-2">
+                <Link href="/signup" className="flex items-center gap-2">
                   Get Started
                   <ArrowRight className="h-5 w-5" />
                 </Link>

@@ -48,7 +48,7 @@ export default function HomePage() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button size="lg" asChild>
-                  <Link href="/auth/signup">
+                  <Link href="/signup">
                     Get Started
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
