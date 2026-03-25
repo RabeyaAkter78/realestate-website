@@ -22,7 +22,7 @@ const socialLinks = [
 
 export function MainFooter() {
   return (
-    <div className="pb-24">
+    <div>
       <QuickCall></QuickCall>
 
       <footer className="bg-[#1a1a1a] text-white">
