@@ -82,7 +82,7 @@ const topBlogs = [
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen bg-linear-to-b from-[#fdf2f2] via-white to-[#ecf7fe] py-20 md:py-28 font-opensans pt-10 md:pt-0">
+    <div className="min-h-screen bg-linear-to-b from-[#fdf2f2] via-white to-[#ecf7fe] py-20 md:py-28 font-opensans pt-10 ">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">

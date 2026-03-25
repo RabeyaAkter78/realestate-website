@@ -67,7 +67,7 @@ const topBlogs = [
 
 export default function BlogDetailPage({ params }: { params: { id: string } }) {
   return (
-    <div className="min-h-screen bg-linear-to-b from-[#fdf2f2] via-white to-[#ecf7fe] py-8 md:py-28 font-opensans pt-28 md:pt-0">
+    <div className="min-h-screen bg-linear-to-b from-[#fdf2f2] via-white to-[#ecf7fe] py-8 md:py-28 font-opensans pt-28 ">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 ">
         {/* Breadcrumbs */}
         <nav className="flex items-center gap-2 text-sm text-gray-500 mb-8">
