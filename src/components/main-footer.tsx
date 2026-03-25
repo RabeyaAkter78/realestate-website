@@ -22,7 +22,7 @@ const socialLinks = [
 
 export function MainFooter() {
   return (
-    <div>
+    <div className="pb-24">
       <QuickCall></QuickCall>
 
       <footer className="bg-[#1a1a1a] text-white">
@@ -30,44 +30,7 @@ export function MainFooter() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Left Side - Logo and Description */}
             <div>
-              {/* <Link href="/" className="flex items-center gap-2 mb-4">
-                <svg
-                  viewBox="0 0 40 40"
-                  className="w-10 h-10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5 30 L10 25 L15 28 L20 22 L25 25 L30 20 L35 25 L35 35 L5 35 Z"
-                    fill="#4CAF50"
-                  />
-                  <path
-                    d="M12 25 L20 15 L28 25 L26 25 L26 35 L14 35 L14 25 Z"
-                    fill="#E53935"
-                  />
-                  <path
-                    d="M10 25 L20 13 L30 25"
-                    stroke="#C62828"
-                    strokeWidth="2"
-                    fill="none"
-                  />
-                  <rect x="17" y="28" width="6" height="7" fill="#5D4037" />
-                  <rect x="15" y="22" width="4" height="4" fill="#FFF" />
-                  <rect x="21" y="22" width="4" height="4" fill="#FFF" />
-                  <circle cx="32" cy="12" r="5" fill="#1E88E5" />
-                  <path
-                    d="M32 7 L32 12 L35 12"
-                    stroke="white"
-                    strokeWidth="2"
-                    fill="none"
-                  />
-                </svg>
-                <span className="text-lg font-bold">
-                  <span className="text-[#E53935]">Insta</span>
-                  <span className="text-[#1E88E5]">Sign</span>
-                  <span className="text-[#E53935]">Tracker</span>
-                </span>
-              </Link> */}
+              
               <Link href="/" className="flex items-center gap-2">
                 <Image src={logo} alt="Logo" width={160} height={40} />
               </Link>

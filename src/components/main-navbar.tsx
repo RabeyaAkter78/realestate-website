@@ -160,44 +160,10 @@ export function MainNavbar() {
               </SheetTrigger>
               <SheetContent side="right" className="w-72 rounded-l-2xl">
                 <div className="flex flex-col gap-4 mt-8">
-                  <div className="flex items-center gap-2 px-2">
-                    <svg
-                      viewBox="0 0 40 40"
-                      className="w-8 h-8"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M5 30 L10 25 L15 28 L20 22 L25 25 L30 20 L35 25 L35 35 L5 35 Z"
-                        fill="#4CAF50"
-                      />
-                      <path
-                        d="M12 25 L20 15 L28 25 L26 25 L26 35 L14 35 L14 25 Z"
-                        fill="#E53935"
-                      />
-                      <path
-                        d="M10 25 L20 13 L30 25"
-                        stroke="#C62828"
-                        strokeWidth="2"
-                        fill="none"
-                      />
-                      <rect x="17" y="28" width="6" height="7" fill="#5D4037" />
-                      <rect x="15" y="22" width="4" height="4" fill="#FFF" />
-                      <rect x="21" y="22" width="4" height="4" fill="#FFF" />
-                      <circle cx="32" cy="12" r="5" fill="#1E88E5" />
-                      <path
-                        d="M32 7 L32 12 L35 12"
-                        stroke="white"
-                        strokeWidth="2"
-                        fill="none"
-                      />
-                    </svg>
-                    <span className="font-bold text-lg">
-                      <span className="text-[#1E88E5]">Insta</span>
-                      <span className="text-[#E53935]">Sign</span>
-                      <span className="text-[#1E88E5]">Tracker</span>
-                    </span>
-                  </div>
+                  <Link href="/" className="flex items-center gap-2">
+                    <Image src={logo} alt="Logo" width={160} height={40} />
+                  </Link>
+
                   <nav className="flex flex-col gap-2">
                     {navItems.map((item) => (
                       <Link
@@ -216,7 +182,7 @@ export function MainNavbar() {
                     ))}
                   </nav>
                   <div className="border-t pt-4 flex flex-col gap-2">
-                    <Button
+                    {/* <Button
                       variant="ghost"
                       size="sm"
                       onClick={toggleTheme}
@@ -231,7 +197,7 @@ export function MainNavbar() {
                           <Moon className="mr-2 h-4 w-4" /> Dark Mode
                         </>
                       )}
-                    </Button>
+                    </Button> */}
                     {!isAuthenticated && (
                       <>
                         <Button

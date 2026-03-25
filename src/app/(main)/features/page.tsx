@@ -52,7 +52,7 @@ const BulletList = () => (
 
 export default function FeaturesPage() {
   return (
-    <div className="min-h-screen font-opensans">
+    <div className="min-h-screen font-opensans pt-10 md:pt-0">
       {/* Hero Section - Original */}
       <section className="py-20 md:mt-20 animate-fade-in">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

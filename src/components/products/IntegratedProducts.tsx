@@ -85,11 +85,11 @@ const sections = [
 export function IntegratedProducts() {
   return (
  <section className="py-20">
-      <div className="container mx-auto px-4 space-y-28">
+      <div className="container mx-auto px-4 space-y-5  md:space-y-28">
         {sections.map((section, index) => (
           <div
             key={section.id}
-            className={`flex flex-col lg:flex-row w-full h-135.25 gap-6 ${
+            className={`flex flex-col lg:flex-row w-full md:h-135.25 gap-6 ${
               index % 2 === 0 ? "lg:flex-row-reverse" : ""
             }`}
           >
@@ -103,7 +103,7 @@ export function IntegratedProducts() {
             </div>
 
             {/* Content */}
-            <div className="w-full lg:w-1/2 h-full bg-white p-10 rounded-xl shadow-lg flex flex-col justify-center">
+            <div className="w-full lg:w-1/2 h-full bg-white p-4 md:p-10 rounded-xl shadow-lg flex flex-col justify-center">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 {section.title}
               </h2>
