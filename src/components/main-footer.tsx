@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { Facebook, Instagram, Youtube } from "lucide-react";
 import QuickCall from "./home/QuickCall";
-
+import Image from "next/image";
+import logo from "../assets/logo.png";
 const footerLinks = {
   products: [
     { label: "Pricing", href: "#" },
@@ -29,7 +30,7 @@ export function MainFooter() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Left Side - Logo and Description */}
             <div>
-              <Link href="/" className="flex items-center gap-2 mb-4">
+              {/* <Link href="/" className="flex items-center gap-2 mb-4">
                 <svg
                   viewBox="0 0 40 40"
                   className="w-10 h-10"
@@ -66,6 +67,9 @@ export function MainFooter() {
                   <span className="text-[#1E88E5]">Sign</span>
                   <span className="text-[#E53935]">Tracker</span>
                 </span>
+              </Link> */}
+              <Link href="/" className="flex items-center gap-2">
+                <Image src={logo} alt="Logo" width={160} height={40} />
               </Link>
               <p className="text-sm text-gray-400 mb-6 max-w-md">
                 InstaSign Tracker Helps Real Estate Sign Companies Manage
