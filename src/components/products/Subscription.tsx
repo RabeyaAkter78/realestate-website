@@ -110,7 +110,7 @@ export default function Subscription() {
                   <span className="text-black/60">{plan.period}</span>
                 </div>
               </div>
-              <Link href="/auth/signup">
+              <Link href="/signup">
                 <button
                   className="w-full mt-6  bg-primary  text-white px-8 py-3 text-lg rounded-md flex items-center justify-center gap-2 cursor-pointer"
                   type="button"

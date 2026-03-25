@@ -207,7 +207,7 @@ export function MainNavbar() {
                           className="rounded-lg"
                         >
                           <Link
-                            href="/auth/login"
+                            href="/login"
                             onClick={() => setIsOpen(false)}
                           >
                             Sign In
@@ -219,7 +219,7 @@ export function MainNavbar() {
                           className="rounded-lg bg-[#2196F3] hover:bg-[#1976D2]"
                         >
                           <Link
-                            href="/auth/signup"
+                            href="/signup"
                             onClick={() => setIsOpen(false)}
                           >
                             Sign Up

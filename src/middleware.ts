@@ -16,7 +16,7 @@ export function middleware(request: NextRequest) {
 
   // If accessing protected routes without auth, redirect to login
   if ((isAgentRoute || isAssistantRoute) && !token) {
-    const loginUrl = new URL("/auth/login", request.url);
+    const loginUrl = new URL("/login", request.url);
     loginUrl.searchParams.set("redirect", pathname);
     return NextResponse.redirect(loginUrl);
   }

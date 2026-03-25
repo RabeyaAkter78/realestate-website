@@ -70,7 +70,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setIsLoading(true);
     try {
       // Mock API call - replace with actual backend login
-      const response = await fetch("/api/auth/login", {
+      const response = await fetch("/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -182,7 +182,7 @@ export function useRequireAuth(role?: UserRole) {
 
   useEffect(() => {
     if (!isLoading && !isAuthenticated) {
-      router.push("/auth/login");
+      router.push("/login");
     }
     
     if (!isLoading && isAuthenticated && role && user?.role !== role) {
