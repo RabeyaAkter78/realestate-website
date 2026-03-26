@@ -1,64 +1,38 @@
 "use client";
 
 import { useState } from "react";
-import { Calendar, Phone, X } from "lucide-react";
+import { Calendar, Phone } from "lucide-react";
 import Image from "next/image";
 import logo from "../../assets/logo.png";
 
 const QuickCall = () => {
-  const [isClosed, setIsClosed] = useState(false);
-
   return (
-    <div
-      className={`
-        ${
-          isClosed
-            ? "relative w-full"
-            : "fixed bottom-6 left-1/2 -translate-x-1/2 z-50 max-w-2xl w-[90%]"
-        } 
-        transition-all duration-300 ease-in-out
-      `}
-    >
-      <div
-        className={`
-        relative bg-[#eaf2f7] font-opensans px-4 sm:px-6 py-3 
-        shadow-lg border border-gray-200 rounded-2xl
-        ${isClosed ? "" : "rounded-2xl"}
-      `}
-      >
-        {/* Close Button - only show when floating */}
-        {!isClosed && (
-          <button
-            onClick={() => setIsClosed(true)}
-            className="absolute -top-3 -right-3 w-8 h-8 bg-blue-500 hover:bg-blue-600 text-white rounded-full flex items-center justify-center shadow-md transition-colors z-50"
-            aria-label="Close"
-          >
-            <X className="w-4 h-4" />
-          </button>
-        )}
-
-        <div className="flex  items-center justify-between gap-4 bg-white rounded-xl p-4 shadow-sm border border-gray-100 container mx-auto">
+    <div className="fixed bottom-0 left-0 right-0 z-50">
+      <div className="relative bg-white/70 backdrop-blur-sm font-opensans px-3 sm:px-6 py-2 sm:py-3 shadow-lg border-t border-gray-200">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4 bg-white/60 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 shadow-sm border border-gray-100 container mx-auto">
           {/* Call Button */}
-          <button className="inline-flex items-center md:gap-2 bg-primary hover:bg-primary/80 text-white px-2 py-1 sm:px-5 sm:py-2.5 rounded-lg text-sm font-medium transition-colors">
-            <Phone className="hidden sm:block w-4 h-4" />
-            Call Us Now
+          <button className="inline-flex items-center gap-1 sm:gap-2 bg-primary hover:bg-primary/80 text-white px-3 sm:px-5 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-medium transition-colors whitespace-nowrap">
+            <Phone className="w-3 h-3 sm:w-4 sm:h-4" />
+            <span className="hidden xs:inline">Call Us Now</span>
+            <span className="xs:hidden">Call</span>
           </button>
 
           {/* Logo */}
-          <div className="hidden sm:block  items-center gap-2">
+          <div className="flex items-center gap-1 sm:gap-2">
             <Image
               src={logo}
               alt="InstaSignTracker"
-              width={100}
-              height={100}
-              className="h-12 w-auto"
+              width={80}
+              height={80}
+              className="h-8 sm:h-12 w-auto"
             />
           </div>
 
           {/* Schedule Demo Button */}
-          <button className="inline-flex items-center gap-2 bg-primary hover:bg-primary/80 text-white px-4 py-1 sm:px-5 sm:py-2.5 rounded-lg text-sm font-medium transition-all shadow-md">
-            <Calendar className="hidden sm:block w-4 h-4" />
-            Schedule Demo
+          <button className="inline-flex items-center gap-1 sm:gap-2 bg-primary hover:bg-primary/80 text-white px-3 sm:px-5 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-medium transition-all shadow-md whitespace-nowrap">
+            <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
+            <span className="hidden xs:inline">Schedule Demo</span>
+            <span className="xs:hidden">Demo</span>
           </button>
         </div>
       </div>
